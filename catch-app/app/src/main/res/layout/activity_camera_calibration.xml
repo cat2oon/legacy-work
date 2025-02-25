@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_camera_calibration"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/id_preview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:layout_centerInParent="true">
+        <android.opengl.GLSurfaceView
+            android:id="@+id/id_gl_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_capture"
+        android:layout_width="138dp"
+        android:layout_height="159dp"
+        android:alpha="0.3"
+        android:layout_marginTop="550dp"
+        android:layout_marginStart="250dp"
+        android:text="" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#e0ffffff">
+
+        <LinearLayout
+            android:id="@+id/layout_resolution"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_preview_size">
+
+            <TextView
+                android:id="@+id/tv_640_camera"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_middle_bar"
+                android:gravity="center"
+                android:text="@string/resolution_smaller"
+                android:textSize="@dimen/layout_resolution_font_size"
+                android:textColor="#0a8dff"
+                android:padding="0dp"/>
+
+            <TextView
+                android:id="@+id/tv_1280_camera"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_middle_bar"
+                android:gravity="center"
+                android:text="@string/resolution_bigger"
+                android:textSize="@dimen/layout_resolution_font_size"
+                android:textColor="#0a8dff"
+                android:padding="0dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

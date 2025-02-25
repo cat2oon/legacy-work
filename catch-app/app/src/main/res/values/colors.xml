@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorWelcomeStart">#ff645f</color>
+    <color name="colorWelcomeEnd">#fe3f35</color>
+
+    <color name="colorFont">#959595</color>
+    <color name="colorBackGround">#00ced1</color>
+
+    <color name="white">#ffffff</color>
+    <color name="gray">#6f6f6f</color>
+    <color name="black">#000000</color>
+    <color name="red">#fe5553</color>
+    <color name="blue">#0a8dff</color>
+
+    <color name="scroll_thumb">#e5e5e5</color>
+
+    <color name="calibration">#E53935</color>
+    <color name="MenuColor">#c49000</color>
+    <color name="floatingBtnColor">#fbc02d</color>
+    <color name="backgroundColor">#00FFFFFF</color>
+    <color name="infoBG">#8d8d8d</color>
+    <color name="fontColor">#efefef</color>
+
+</resources>

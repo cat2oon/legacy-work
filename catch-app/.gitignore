@@ -1,0 +1,28 @@
+
+### Kappa App Ignore ###
+
+
+### IntelliJ IDE ###
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/local.properties
+
+### MAC ###
+.DS_Store
+
+### APP Structure ###
+*.iml
+/build
+/captures
+.gradle
+.externalNativeBuild
+
+### 3rd party lib ###
+STMobileJNI
+openCVLibrary345
+
+

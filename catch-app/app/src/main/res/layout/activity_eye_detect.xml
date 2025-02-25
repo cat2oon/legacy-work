@@ -1,0 +1,519 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <camp.visual.kappa.GazeView
+        android:id="@+id/gazeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        android:alpha="0.6"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_snapshot"
+        android:layout_width="138dp"
+        android:layout_height="159dp"
+        android:alpha="0.3"
+        android:layout_marginTop="550dp"
+        android:layout_marginStart="250dp"
+        android:text="" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#e0ffffff">
+
+        <LinearLayout
+            android:id="@+id/layout_resolution"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_preview_size">
+
+            <TextView
+                android:id="@+id/tv_info_render"
+                android:layout_width="50dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_left_corner_unpressed"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="@string/render_info"
+                android:textSize="@dimen/layout_resolution_font_size"
+                android:textColor="#0a8dff"
+                android:padding="0dp"/>
+
+            <TextView
+                android:id="@+id/tv_view_render"
+                android:layout_width="50dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_left_corner_unpressed"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="@string/render_view"
+                android:textSize="@dimen/layout_resolution_font_size"
+                android:textColor="#0a8dff"
+                android:padding="0dp"/>
+
+            <TextView
+                android:id="@+id/tv_smaller_preview_size"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_middle_bar"
+                android:gravity="center"
+                android:text="@string/resolution_smaller"
+                android:textSize="@dimen/layout_resolution_font_size"
+                android:textColor="#0a8dff"
+                android:padding="0dp"/>
+
+            <TextView
+                android:id="@+id/tv_larger_preview_size"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_middle_bar"
+                android:gravity="center"
+                android:text="@string/resolution_bigger"
+                android:textSize="@dimen/layout_resolution_font_size"
+                android:textColor="#0a8dff"
+                android:padding="0dp"/>
+
+            <TextView
+                android:id="@+id/tv_show_render"
+                android:layout_width="50dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_right_corner_unpressed"
+                android:gravity="center"
+                android:text="@string/render_landmark"
+                android:textSize="@dimen/layout_resolution_font_size"
+                android:textColor="#0a8dff"
+                android:padding="0dp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/frame_radio"
+                android:textColor="@color/white"
+                android:textSize="@dimen/layout_resolution_font_size"/>
+            <TextView
+                android:id="@+id/tv_frame_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5ms"
+                android:textColor="@color/white"
+                android:textSize="@dimen/layout_resolution_font_size"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_cpu_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cpu_radio"
+                android:textColor="@color/white"
+                android:textSize="@dimen/layout_resolution_font_size"/>
+            <TextView
+                android:id="@+id/tv_cpu_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23%"
+                android:textColor="@color/white"
+                android:textSize="@dimen/layout_resolution_font_size"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_show_info"
+        android:visibility="invisible"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cpuText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:textSize="14dp"
+            android:text="" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_frame_cost"
+        android:layout_width="70dp"
+        android:layout_height="72dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="66dp"
+        android:layout_centerHorizontal="true"
+        android:background="#66333333"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_fps"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="11dp"
+            android:textColor="@color/white"
+            android:padding="4dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_frame_cost"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="11dp"
+            android:textColor="@color/white"
+            android:padding="4dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_face_info"
+        android:layout_width="70dp"
+        android:layout_height="220dp"
+        android:layout_below="@+id/ll_frame_cost"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:background="#66333333"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_ER"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="11dp"
+            android:textColor="@color/white"
+            android:padding="4dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_EP"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="11dp"
+            android:textColor="@color/white"
+            android:padding="4dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_IR"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="11dp"
+            android:textColor="@color/white"
+            android:padding="4dp"
+            android:layout_weight="1"/>
+         <TextView
+            android:id="@+id/tv_PR"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="11dp"
+            android:textColor="@color/white"
+            android:padding="4dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_ooo"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="11dp"
+            android:textColor="@color/white"
+            android:padding="4dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_select_options"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_setting_btn"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="300dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/iv_setting_options_switch"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/setting" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rv_setting_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:clickable="true"
+        android:background="#b2000000">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rv_setting"
+            android:layout_width="340dp"
+            android:layout_height="430dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="70dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_setting_color">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:scrollbarSize="3dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_face_options"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_face_options"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="22dp"
+                            android:background="@drawable/face"/>
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/iv_face_options"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center"
+                            android:textColor="#800a8dff"
+                            android:textSize="20dp"
+                            android:text="Face"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_show_render_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/rl_face_options"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_show_render_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="22dp"
+                            android:gravity="center_vertical"
+                            android:textColor="#333333"
+                            android:textSize="17dp"
+                            android:text="Render Detection"/>
+
+                        <Switch
+                            android:id="@+id/sw_show_render_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:switchMinWidth="56dp"
+                            android:thumbTextPadding="14dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:textOn=""
+                            android:textOff=""
+                            android:thumb="@drawable/thumb"
+                            android:track="@drawable/track" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_face106_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/rl_show_render_switch"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_face106_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="22dp"
+                            android:gravity="center_vertical"
+                            android:textColor="#333333"
+                            android:textSize="17dp"
+                            android:text="106 Tracking"/>
+
+                        <Switch
+                            android:id="@+id/sw_face106_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:switchMinWidth="56dp"
+                            android:thumbTextPadding="14dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:textOn=""
+                            android:textOff=""
+                            android:thumb="@drawable/thumb"
+                            android:track="@drawable/track" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_face_extra_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/rl_face106_switch"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_face_extra_switch"
+                            android:layout_width="200dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="22dp"
+                            android:gravity="center_vertical"
+                            android:textColor="#333333"
+                            android:textSize="17dp"
+                            android:text="Face Advanced Tracking"/>
+
+                        <Switch
+                            android:id="@+id/sw_face_extra_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:switchMinWidth="56dp"
+                            android:thumbTextPadding="14dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:textOn=""
+                            android:textOff=""
+                            android:thumb="@drawable/thumb"
+                            android:track="@drawable/track" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_eyeball_center_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/rl_face_extra_switch"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_eyeball_center_switch"
+                            android:layout_width="200dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="22dp"
+                            android:gravity="center_vertical"
+                            android:textColor="#333333"
+                            android:textSize="17dp"
+                            android:text="Eyeball Center Tracking"/>
+
+                        <Switch
+                            android:id="@+id/sw_eyeball_center_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:switchMinWidth="56dp"
+                            android:thumbTextPadding="14dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:textOn=""
+                            android:textOff=""
+                            android:thumb="@drawable/thumb"
+                            android:track="@drawable/track" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_eyeball_contour_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/rl_eyeball_center_switch"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_eyeball_contour_switch"
+                            android:layout_width="200dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="22dp"
+                            android:gravity="center_vertical"
+                            android:textColor="#333333"
+                            android:textSize="17dp"
+                            android:text="Eyeball Contour Tracking"/>
+
+                        <Switch
+                            android:id="@+id/sw_eyeball_contour_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:switchMinWidth="56dp"
+                            android:thumbTextPadding="14dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="17dp"
+                            android:textOn=""
+                            android:textOff=""
+                            android:thumb="@drawable/thumb"
+                            android:track="@drawable/track" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rv_setting_done"
+            android:layout_width="340dp"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_setting_color"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_setting_done"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/blue"
+                android:text="OK" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</merge>
