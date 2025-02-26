@@ -1,5 +1,8 @@
 # legacy-work (ML 위주의 프로젝트)
 - 백엔드와 MLOPS 작업은 회사 깃헙에서만 작업하였다 보니 자료가 없어서 포함하지 못하였습니다 (포트폴리오 PPT를 참고해주세요)
+- JS에는 익숙하나 타입스크립트는 이전 직장에서 웹/웹앱 서비스를 개발하기 전까지는 사용한적 없었습니다만 2~3주 정도의 워밍업 후 바로 개발 수행하였습니다
+  - 워밍업 후에는 아래와 같은 형태의 이슈도 스스로 분석하여 해답을 제시할 수 있는 편입니다 (void-index가 저에요)
+  - https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/479#issuecomment-1267772279
 
 ## catch-app
 - 머신러닝 적용 이전 OpenCV와 기하 계산만으로 가설/실험 등을 수행한 안드로이드 앱 프로젝트입니다
